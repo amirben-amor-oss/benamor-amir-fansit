@@ -1,39 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Forum FC Bayern München</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_(2017).svg" alt="Logo Bayern" class="logo">
-      <h1 class="title">Forum des Fans du FC Bayern München</h1>
-      <p>Bienvenue sur le forum officiel des supporters du Bayern !</p>
-    </header>
-    <main>
-      <section class="new-post">
-        <h2>Nouvelle publication</h2>
-        <form>
-          <input type="text" placeholder="Votre nom" required>
-          <textarea placeholder="Votre message..." required></textarea>
-          <button type="submit">Publier</button>
-        </form>
-      </section>
-      <section class="posts">
-        <h2>Discussions récentes</h2>
-        <div class="post">
-          <span class="author">Alice</span>
-          <p>Le Bayern va gagner cette saison ! Mia San Mia 🔴⚪</p>
-        </div>
-        <div class="post">
-          <span class="author">Bob</span>
-          <p>Sané et Musiala sont incroyables !</p>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2024 Forum des Fans du FC Bayern München</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Forum - FC Bayern München</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background"></div>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_(2017).svg" alt="Logo Bayern" class="logo">
+    <h1 class="title">Forum des Fans du FC Bayern München</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="forum.html">Forum</a>
+      <a href="#">Événements</a>
+      <a href="#">Le Club</a>
+      <a href="#">Calendrier</a>
+      <a href="#">Bayern TV</a>
+    </nav>
+  </header>
+  <main>
+    <section class="new-post">
+      <h2>Nouvelle publication</h2>
+      <form>
+        <input type="text" placeholder="Votre nom" required>
+        <textarea placeholder="Votre message..." required></textarea>
+        <button type="submit">Publier</button>
+      </form>
+    </section>
+    <section class="posts">
+      <h2>Discussions récentes</h2>
+      <div class="post">
+        <span class="author">Alice</span>
+        <p>Le Bayern va gagner cette saison ! Mia San Mia 🔴⚪</p>
+      </div>
+      <div class="post">
+        <span class="author">Bob</span>
+        <p>Sané et Musiala sont incroyables !</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Forum des Fans du FC Bayern München</p>
+  </footer>
+</body>
 </html>

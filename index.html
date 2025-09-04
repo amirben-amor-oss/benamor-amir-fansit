@@ -2,33 +2,46 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Accueil - FC Bayern München Fan Site</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Forum - FC Bayern München</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="background"></div>
   <header>
     <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_(2017).svg" alt="Logo Bayern" class="logo">
-    <h1>FC Bayern München Fan Club</h1>
-    <p class="slogan">Mia San Mia - Passion, Fierté, Rouge & Blanc</p>
+    <h1 class="title">Forum des Fans du FC Bayern München</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="forum.html">Forum</a>
+      <a href="#">Événements</a>
+      <a href="#">Le Club</a>
+      <a href="#">Calendrier</a>
+      <a href="#">Bayern TV</a>
+    </nav>
   </header>
   <main>
-    <nav class="menu">
-      <a href="forum.html" class="btn">Forum</a>
-      <a href="evennement.html" class="btn">Événements</a>
-      <a href="club.html" class="btn">Le Club</a>
-      <a href="calendrier.html" class="btn">Calendrier</a>
-      <a href="bayerntv.html" class="btn">Bayern TV</a>
-    </nav>
-    <section class="intro">
-      <h2>Bienvenue Fans du Bayern !</h2>
-      <p>
-        Rejoignez la communauté des supporters du FC Bayern München. Retrouvez les dernières actualités, discutez sur le forum, découvrez les événements et suivez tous les matchs du club.
-      </p>
+    <section class="new-post">
+      <h2>Nouvelle publication</h2>
+      <form>
+        <input type="text" placeholder="Votre nom" required>
+        <textarea placeholder="Votre message..." required></textarea>
+        <button type="submit">Publier</button>
+      </form>
+    </section>
+    <section class="posts">
+      <h2>Discussions récentes</h2>
+      <div class="post">
+        <span class="author">Alice</span>
+        <p>Le Bayern va gagner cette saison ! Mia San Mia 🔴⚪</p>
+      </div>
+      <div class="post">
+        <span class="author">Bob</span>
+        <p>Sané et Musiala sont incroyables !</p>
+      </div>
     </section>
   </main>
   <footer>
-    <p>&copy; 2024 FC Bayern München Fan Club</p>
+    <p>&copy; 2024 Forum des Fans du FC Bayern München</p>
   </footer>
 </body>
 </html>

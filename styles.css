@@ -268,3 +268,77 @@ footer {
     padding: 7px;
   }
 }
+.club-description, .club-titles, .club-squad, .club-coach {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px #de002922;
+  padding: 22px;
+  margin-bottom: 28px;
+}
+
+.club-description h2,
+.club-titles h2,
+.club-squad h2,
+.club-coach h2 {
+  color: #de0029;
+  margin-top: 0;
+}
+
+.club-titles ul {
+  padding-left: 22px;
+  font-size: 1.08em;
+}
+.club-titles .source {
+  font-size: 0.95em;
+  color: #888;
+  margin-top: 12px;
+}
+
+.squad-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+}
+.squad-list > div {
+  width: 110px;
+  text-align: center;
+}
+.player-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #de0029;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px #de002922;
+}
+
+.coach-block {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: center;
+}
+.coach-block .player-img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .squad-list {
+    gap: 14px;
+  }
+  .squad-list > div {
+    width: 90px;
+  }
+  .player-img, .coach-block .player-img {
+    width: 65px;
+    height: 65px;
+  }
+  .coach-block {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,46 +1,41 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Forum - FC Bayern München</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="background"></div>
-  <header>
-   <img src="./asset/logo.png" alt="Logo Bayern" class="logo">
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="forum.html">Forum</a>
-      <a href="#">Événements</a>
-      <a href="le club.html">Le Club</a>
-      <a href="calendrier.html">Calendrier</a>
-      <a href="#">Bayern TV</a>
-    </nav>
-  </header>
-  <main>
-    <section class="new-post">
-      <h2>Nouvelle publication</h2>
-      <form>
-        <input type="text" placeholder="Votre nom" required>
-        <textarea placeholder="Votre message..." required></textarea>
-        <button type="submit">Publier</button>
-      </form>
-    </section>
-    <section class="posts">
-      <h2>Discussions récentes</h2>
-      <div class="post">
-        <span class="author">Alice</span>
-        <p>Le Bayern va gagner cette saison ! Mia San Mia 🔴⚪</p>
-      </div>
-      <div class="post">
-        <span class="author">Bob</span>
-        <p>Sané et Musiala sont incroyables !</p>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 Forum des Fans du FC Bayern München</p>
-  </footer>
-</body>
+<html>
+  <head>
+    <title>Bayern FB - Accueil</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="overlay">
+      <header>
+        <h1 class="title">Bayern Football Club</h1>
+        <nav>
+          <a href="index.html">Accueil</a>
+          <a href="le club.html">Équipe</a>
+          <a href="calendrier.html">Calendrier</a>
+          <a href="forum.html">Contact</a>
+        </nav>
+      </header>
+      <main>
+        <section class="intro">
+          <h2>Bienvenue sur le site des fans du Bayern Munich!</h2>
+          <p>
+            Retrouvez toutes les informations sur votre club favori : actualités, résultats, joueurs et plus encore.
+          </p>
+          <p id="currentTime"></p>
+        </section>
+        <section class="news">
+          <h3>Dernières actualités</h3>
+          <ul>
+            <li>Victoire 3-1 contre Dortmund !</li>
+            <li>Prochain match : samedi à 18h</li>
+            <li>Nouveau maillot disponible en boutique</li>
+          </ul>
+        </section>
+      </main>
+      <footer>
+        <p>&copy; 2024 Bayern FB. Tous droits réservés.</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

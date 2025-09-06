@@ -13,7 +13,8 @@
     <nav>
       <a href="index.html">Accueil</a>
       <a href="forum.html">Forum</a>
-      <a href="le club.html">Le Club</a>
+      <a href="#">Événements</a>
+      <a href="#">Le Club</a>
       <a href="calendrier.html">Calendrier</a>
       <a href="#">Bayern TV</a>
     </nav>
@@ -39,8 +40,7 @@
           <li>Diffusion : Bayern TV</li>
         </ul>
       </div>
-
-      <!-- Minuteur avant le prochain match -->
+      <!-- Minuteur et score live -->
       <div class="countdown-block">
         <h3>Décompte avant le prochain match</h3>
         <div id="countdown"></div>
@@ -123,23 +123,32 @@
     <p>&copy; 2024 FC Bayern München Fan Forum</p>
   </footer>
 
-  <!-- Script minuteur -->
+  <!-- Script minuteur / score live -->
   <script>
-    // Prochain match : 30 juin 2024, 18:30
-    const matchDate = new Date('2024-06-30T18:30:00');
+    // Prochain match : 30 juin 2024, 18:30 à 20:15
+    const matchStart = new Date('2024-06-30T18:30:00');
+    const matchEnd = new Date('2024-06-30T20:15:00'); // Fin estimée
+    // Score à afficher (exemple, à modifier pendant le match)
+    const scoreLive = "Bayern 2 - 0 Leipzig"; 
+
     function updateCountdown() {
       const now = new Date();
-      const diff = matchDate - now;
-      if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = "Le match a commencé !";
-        return;
+      if (now < matchStart) {
+        // Avant le match
+        const diff = matchStart - now;
+        const days = Math.floor(diff / (1000*60*60*24));
+        const hours = Math.floor((diff / (1000*60*60)) % 24);
+        const mins = Math.floor((diff / (1000*60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+        document.getElementById('countdown').innerHTML =
+          `${days}j ${hours}h ${mins}m ${secs}s`;
+      } else if (now >= matchStart && now < matchEnd) {
+        // Match en cours
+        document.getElementById('countdown').innerHTML = "Match en cours : <span class=\"live-score\">" + scoreLive + "</span>";
+      } else {
+        // Match terminé
+        document.getElementById('countdown').innerHTML = "Le match est terminé. Score final : <span class=\"live-score\">" + scoreLive + "</span>";
       }
-      const days = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff / (1000*60*60)) % 24);
-      const mins = Math.floor((diff / (1000*60)) % 60);
-      const secs = Math.floor((diff / 1000) % 60);
-      document.getElementById('countdown').innerHTML =
-        `${days}j ${hours}h ${mins}m ${secs}s`;
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);

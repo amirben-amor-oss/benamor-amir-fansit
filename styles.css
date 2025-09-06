@@ -123,33 +123,7 @@ main {
   padding-left: 18px;
 }
 
-.arena3d-section {
-  margin: 36px 0 24px 0;
-  background: rgba(255,255,255,0.97);
-  border-radius: 18px;
-  box-shadow: 0 4px 32px #de002933;
-  padding: 16px 10px 20px 10px;
-}
-.arena3d-section h2 {
-  color: #de0029;
-  margin-top: 0;
-  text-align: center;
-}
-.arena3d-container {
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.arena3d-container iframe {
-  width: 100%;
-  height: 480px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 2px 24px #de002966;
-  background: #000;
-  display: block;
-}
-
+/* Bloc actualités FlashScore Bayern */
 .flashscore-section {
   margin: 36px 0 24px 0;
   background: rgba(255,255,255,0.97);
@@ -162,21 +136,192 @@ main {
   margin-top: 0;
   text-align: center;
 }
-.flashscore-container {
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
+.flashscore-news {
+  list-style: none;
+  padding-left: 0;
+  margin: 18px 0 0 0;
 }
-.flashscore-container iframe {
-  width: 100%;
-  height: 600px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 2px 24px #de002966;
-  background: #fff;
-  display: block;
+.flashscore-news li {
+  margin-bottom: 14px;
+  background: #fff6f6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 1px 8px #de002911;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flashscore-news a {
+  color: #de0029;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.flashscore-news a:hover {
+  color: #a8001c;
+  text-decoration: underline;
+}
+.news-date {
+  color: #888;
+  font-size: 0.95em;
+  margin-left: 12px;
 }
 
+/* --- Forum / posts --- */
+.new-post {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+.new-post form {
+  display: flex;
+  flex-direction: column;
+}
+.new-post input,
+.new-post textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #de0029;
+  border-radius: 6px;
+  font-size: 1em;
+  background: #fff;
+}
+.new-post button {
+  width: 140px;
+  padding: 10px;
+  background: #de0029;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+}
+.new-post button:hover {
+  background: #a8001c;
+  transform: scale(1.05);
+}
+.posts .post {
+  background: #f8d7da;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #de0029;
+  box-shadow: 0 2px 8px #de002922;
+}
+.author {
+  font-weight: bold;
+  color: #de0029;
+}
+
+/* --- Calendrier et Classement --- */
+.stats-section .stats-block,
+.calendar-section,
+.ranking-section {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px #de002922;
+  padding: 22px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.stats-section h2,
+.calendar-section h2,
+.ranking-section h2 {
+  color: #de0029;
+  margin-top: 22px;
+}
+.calendar-table, .ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background: #fff;
+  box-shadow: 0 2px 12px #de002922;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.calendar-table th, .ranking-table th {
+  background: #de0029;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+.calendar-table td, .ranking-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+.calendar-table tr:last-child td,
+.ranking-table tr:last-child td {
+  border-bottom: none;
+}
+.ranking-table .bayern-row {
+  background: #f8d7da;
+  color: #de0029;
+  font-weight: bold;
+}
+
+/* --- Bloc club/effectif/coach --- */
+.club-description,
+.club-titles,
+.club-squad,
+.club-coach {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px #de002922;
+  padding: 22px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.club-titles ul {
+  margin: 10px 0 0 0;
+  padding-left: 18px;
+  font-size: 1.08em;
+}
+.club-titles .source {
+  font-size: 0.95em;
+  color: #888;
+  margin-top: 12px;
+}
+.squad-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+}
+.squad-list > div {
+  width: 110px;
+  text-align: center;
+}
+.player-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #de0029;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px #de002922;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.player-img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 20px #de0029bb;
+  z-index: 1;
+}
+.coach-block {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: center;
+}
+.coach-block .player-img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0;
+}
+
+/* --- Pied de page --- */
 footer {
   text-align: center;
   padding: 16px;
@@ -194,11 +339,10 @@ footer {
     margin: 12px;
     padding: 6vw;
   }
-  .arena3d-container iframe {
-    height: 320px;
-  }
-  .flashscore-container iframe {
-    height: 330px;
+  .squad-list {
+    gap: 14px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 @media (max-width: 800px) {
@@ -210,10 +354,24 @@ footer {
     padding: 10px 18px;
     font-size: 1em;
   }
+  .calendar-table, .ranking-table {
+    font-size: 0.95em;
+  }
+  .calendar-table th, .ranking-table th,
+  .calendar-table td, .ranking-table td {
+    padding: 7px;
+  }
 }
-@media (max-width: 600px) {
-  .arena3d-container iframe,
-  .flashscore-container iframe {
-    height: 200px;
+@media (max-width: 700px) {
+  .squad-list > div {
+    width: 90px;
+  }
+  .player-img, .coach-block .player-img {
+    width: 65px;
+    height: 65px;
+  }
+  .coach-block {
+    flex-direction: column;
+    gap: 8px;
   }
 }

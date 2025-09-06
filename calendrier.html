@@ -8,14 +8,13 @@
 <body>
   <div class="background"></div>
   <header>
-   <img src="./asset/logo.png" alt="Logo Bayern" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_(2017).svg" alt="Logo Bayern" class="logo">
     <h1 class="title">FC Bayern München - Calendrier, Stats & Classement</h1>
     <nav>
       <a href="index.html">Accueil</a>
       <a href="forum.html">Forum</a>
-      <a href="#">Événements</a>
-      <a href="#">Le Club</a>
-      <a href="#">Calendrier</a>
+      <a href="le club.html">Le Club</a>
+      <a href="calendrier.html">Calendrier</a>
       <a href="#">Bayern TV</a>
     </nav>
   </header>
@@ -39,6 +38,16 @@
           <li>Stade : Allianz Arena</li>
           <li>Diffusion : Bayern TV</li>
         </ul>
+      </div>
+
+      <!-- Minuteur avant le prochain match -->
+      <div class="countdown-block">
+        <h3>Décompte avant le prochain match</h3>
+        <div id="countdown"></div>
+        <div class="next-match-details">
+          <strong>Bayern München vs Leipzig</strong><br>
+          <span>Stade : Allianz Arena</span>
+        </div>
       </div>
     </section>
 
@@ -113,5 +122,27 @@
   <footer>
     <p>&copy; 2024 FC Bayern München Fan Forum</p>
   </footer>
+
+  <!-- Script minuteur -->
+  <script>
+    // Prochain match : 30 juin 2024, 18:30
+    const matchDate = new Date('2024-06-30T18:30:00');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = matchDate - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = "Le match a commencé !";
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff / (1000*60*60)) % 24);
+      const mins = Math.floor((diff / (1000*60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      document.getElementById('countdown').innerHTML =
+        `${days}j ${hours}h ${mins}m ${secs}s`;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>

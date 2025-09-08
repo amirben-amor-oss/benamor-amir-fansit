@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bayern TV - Vidéos du FC Bayern München</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .tv-main-video {
+      display: flex;
+      justify-content: center;
+      margin: 38px 0 24px 0;
+    }
+    .tv-main-video iframe {
+      width: 100%;
+      max-width: 640px;
+      height: 360px;
+      border-radius: 16px;
+      box-shadow: 0 4px 32px #de002933;
+      border: none;
+    }
+    .tv-row {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 38px;
+      flex-wrap: wrap;
+    }
+    .tv-video-block {
+      flex: 1 1 340px;
+      max-width: 480px;
+      background: #fff6f6;
+      border-radius: 14px;
+      box-shadow: 0 2px 14px #de002922;
+      padding: 18px 12px 16px 12px;
+      text-align: center;
+    }
+    .tv-video-block iframe {
+      width: 100%;
+      max-width: 420px;
+      height: 240px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 12px #de002944;
+    }
+    .tv-video-block .desc {
+      font-size: 1em;
+      color: #de0029;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    @media (max-width: 900px) {
+      .tv-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .tv-video-block {
+        max-width: 98vw;
+        padding: 12px 5px;
+      }
+      .tv-main-video iframe {
+        max-width: 98vw;
+        height: 210px;
+      }
+      .tv-video-block iframe {
+        max-width: 98vw;
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <header>
+    <img src="logo.png" alt="Logo Bayern" class="logo">
+    <h1 class="title">Bayern TV - Vidéos du FC Bayern München</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="forum.html">Forum</a>
+      <a href="le club.html">Le Club</a>
+      <a href="calendrier.html">Calendrier</a>
+      <a href="bayerntv.html">Bayern TV</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Vidéo principale centrée -->
+    <section class="tv-main-video">
+      <iframe src="https://www.youtube.com/embed/kYWUF6-7uGM?list=RDkYWUF6-7uGM&start_radio=1" allowfullscreen></iframe>
+    </section>
+    <!-- Deux vidéos côte à côte -->
+    <section class="tv-row">
+      <div class="tv-video-block">
+        <iframe src="https://www.youtube.com/embed/YDjRoPCf2Ko" allowfullscreen></iframe>
+        <div class="desc">Résumé du dernier match</div>
+        <a href="https://www.youtube.com/watch?v=YDjRoPCf2Ko" target="_blank">Voir sur YouTube</a>
+      </div>
+      <div class="tv-video-block">
+        <iframe src="https://www.youtube.com/embed/z1SsQqv0DtU" allowfullscreen></iframe>
+        <div class="desc">Meilleure composition & tuto skills</div>
+        <a href="https://www.youtube.com/watch?v=z1SsQqv0DtU" target="_blank">Voir sur YouTube</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 FC Bayern München Fan Forum</p>
+  </footer>
+</body>
+</html>

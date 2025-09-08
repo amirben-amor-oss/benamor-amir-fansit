@@ -8,15 +8,14 @@
 <body>
   <div class="background"></div>
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_(2017).svg" alt="Logo Bayern" class="logo">
+    <img src="asset/logo.png" alt="Logo Bayern" class="logo">
     <h1 class="title">FC Bayern München - Calendrier, Stats & Classement</h1>
     <nav>
       <a href="index.html">Accueil</a>
       <a href="forum.html">Forum</a>
-      <a href="#">Événements</a>
       <a href="le club.html">Le Club</a>
       <a href="calendrier.html">Calendrier</a>
-      <a href="#">Bayern TV</a>
+      <a href="bayerntv.html">Bayern TV</a>
     </nav>
   </header>
   <main>
@@ -40,7 +39,6 @@
           <li>Diffusion : Bayern TV</li>
         </ul>
       </div>
-      <!-- Minuteur et score live -->
       <div class="countdown-block">
         <h3>Décompte avant le prochain match</h3>
         <div id="countdown"></div>
@@ -50,7 +48,6 @@
         </div>
       </div>
     </section>
-
     <section class="calendar-section">
       <h2>Calendrier des prochains matchs</h2>
       <table class="calendar-table">
@@ -84,7 +81,6 @@
         </tbody>
       </table>
     </section>
-
     <section class="ranking-section">
       <h2>Classement Bundesliga</h2>
       <table class="ranking-table">
@@ -122,33 +118,22 @@
   <footer>
     <p>&copy; 2024 FC Bayern München Fan Forum</p>
   </footer>
-
-  <!-- Script minuteur / score live -->
   <script>
-    // Prochain match : 30 juin 2024, 18:30 à 20:15
-    const matchStart = new Date('2024-06-30T18:30:00');
-    const matchEnd = new Date('2024-06-30T20:15:00'); // Fin estimée
-    // Score à afficher (exemple, à modifier pendant le match)
-    const scoreLive = "Bayern 2 - 0 Leipzig"; 
-
+    // Prochain match : 30 juin 2024, 18:30
+    const matchDate = new Date('2024-06-30T18:30:00');
     function updateCountdown() {
       const now = new Date();
-      if (now < matchStart) {
-        // Avant le match
-        const diff = matchStart - now;
-        const days = Math.floor(diff / (1000*60*60*24));
-        const hours = Math.floor((diff / (1000*60*60)) % 24);
-        const mins = Math.floor((diff / (1000*60)) % 60);
-        const secs = Math.floor((diff / 1000) % 60);
-        document.getElementById('countdown').innerHTML =
-          `${days}j ${hours}h ${mins}m ${secs}s`;
-      } else if (now >= matchStart && now < matchEnd) {
-        // Match en cours
-        document.getElementById('countdown').innerHTML = "Match en cours : <span class=\"live-score\">" + scoreLive + "</span>";
-      } else {
-        // Match terminé
-        document.getElementById('countdown').innerHTML = "Le match est terminé. Score final : <span class=\"live-score\">" + scoreLive + "</span>";
+      const diff = matchDate - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = "Le match a commencé !";
+        return;
       }
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff / (1000*60*60)) % 24);
+      const mins = Math.floor((diff / (1000*60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      document.getElementById('countdown').innerHTML =
+        `${days}j ${hours}h ${mins}m ${secs}s`;
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
